@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                  controllers.Login.index
+GET         /login                             controllers.Login.login
+POST        /login                             controllers.Login.doLogin
+
+# Dashboard page
+GET         /dashboard                         controllers.Dashboard.index
+POST        /dashboard                         controllers.Dashboard.checkToken
+POST        /dashboard/getUserByToken                        controllers.Dashboard.getUserByToken
+#POST        /dashboard                         controllers.Dashboard.getUserById
+#POST        /dashboard                         controllers.Dashboard.getUsers
+#POST        /dashboard                         controllers.Dashboard.updateUser
+#POST        /dashboard                         controllers.Dashboard.checkRole
+
+
+#POST        /post                controllers.Application.postMessage
+#GET        /stream              controllers.Application.chatFeed
+GET         /newPost                           controllers.Login.newPost()
+GET         /newUser                           controllers.Login.newUser()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                      controllers.Assets.at(path="/public", file)
+
+    
